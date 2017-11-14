@@ -1,39 +1,26 @@
-import com.sun.deploy.util.ArrayUtil;
-
-import java.util.Arrays;
-
+/**
+ * http://practice.geeksforgeeks.org/problems/coin-change/0
+ */
 public class CoinChange {
 
-    private static int[] cache;
-
     static int coinChange(int number, int[] coins) {
-        initCache(number);
-        Arrays.sort(coins);
-        changeCount(number, coins);
-        return cache[number];
+        return changeCount(number, coins.length - 1, coins);
     }
 
-    private static void initCache(int number) {
-        cache = new int[number + 1];
-    }
-
-    static int changeCount(int number, int[] coins) {
-        if (cache[number] > 0) {
-            return cache[number];
+    static int changeCount(int number, int i, int[] coins) {
+        if (i < 0) {
+            return 0;
         }
 
-        for (int i = coins.length - 1; i >= 0; i--) {
-            final int coin = coins[i];
-            if (number - coin == 0) {
-                cache[number] += 1;
-            } else if (number - coin < 0) {
-                //do nothing
-            } else {
-                cache[number] += changeCount(
-                        number - coin,
-                        Arrays.copyOf(coins, coins.length - 1));
-            }
+        final int coin = coins[i];
+
+        if (number == 0) {
+            return 1;
+        } else if (number < 0) {
+            return 0;
+        } else {
+            return changeCount(number, i - 1, coins) +
+                    changeCount(number - coin, i, coins);
         }
-        return cache[number];
     }
 }
