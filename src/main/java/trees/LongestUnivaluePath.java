@@ -2,13 +2,6 @@ package trees;
 
 class LongestUnivaluePath {
 
-    public static class TreeNode {
-       int val;
-       TreeNode left;
-       TreeNode right;
-       TreeNode(int x) { val = x; }
-   }
-
     int longestUnivaluePath(TreeNode root) {
         if (root == null) return 0;
         final int maxLeft = root.left != null && root.left.val == root.val ? longestUnivaluePath(root.left) + 1

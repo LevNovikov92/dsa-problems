@@ -4,17 +4,15 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class LongestUnivaluePathTest {
 
-    LongestUnivaluePath.TreeNode root = new LongestUnivaluePath.TreeNode(0);
-    LongestUnivaluePath.TreeNode node1 = new LongestUnivaluePath.TreeNode(0);
-    LongestUnivaluePath.TreeNode node2 = new LongestUnivaluePath.TreeNode(0);
-    LongestUnivaluePath.TreeNode node11 = new LongestUnivaluePath.TreeNode(0);
-    LongestUnivaluePath.TreeNode node12 = new LongestUnivaluePath.TreeNode(0);
-    LongestUnivaluePath.TreeNode node22 = new LongestUnivaluePath.TreeNode(0);
-    LongestUnivaluePath.TreeNode node222 = new LongestUnivaluePath.TreeNode(0);
+    TreeNode root = new TreeNode(0);
+    TreeNode node1 = new TreeNode(0);
+    TreeNode node2 = new TreeNode(0);
+    TreeNode node11 = new TreeNode(0);
+    TreeNode node12 = new TreeNode(0);
+    TreeNode node22 = new TreeNode(0);
+    TreeNode node222 = new TreeNode(0);
 
     @Before
     public void setUp() {
