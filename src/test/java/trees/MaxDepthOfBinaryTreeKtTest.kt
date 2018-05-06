@@ -7,11 +7,11 @@ import org.junit.Assert.*
 class MaxDepthOfBinaryTreeKtTest {
     @Test
     fun maxDepthOfBinaryTree() {
-        val root = MaxDepthOfBinaryTree.TreeNode(1)
-        val node1 = MaxDepthOfBinaryTree.TreeNode(1)
-        val node2 = MaxDepthOfBinaryTree.TreeNode(1)
-        val node3 = MaxDepthOfBinaryTree.TreeNode(1)
-        val node4 = MaxDepthOfBinaryTree.TreeNode(1)
+        val root = MaxDepthOfBinaryTree.Node(1)
+        val node1 = MaxDepthOfBinaryTree.Node(1)
+        val node2 = MaxDepthOfBinaryTree.Node(1)
+        val node3 = MaxDepthOfBinaryTree.Node(1)
+        val node4 = MaxDepthOfBinaryTree.Node(1)
 
         root.left = node1
         node1.left = node2

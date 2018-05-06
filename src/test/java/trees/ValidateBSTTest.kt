@@ -3,17 +3,17 @@ package trees
 import org.junit.Test
 
 import org.junit.Assert.*
-import trees.ValidateBST.TreeNode
+import trees.ValidateBST.Node
 
 class ValidateBSTTest {
 
     @Test
     fun isValidBST() {
-        val root = TreeNode(5)
-        val l1 = TreeNode(1)
-        val r1 = TreeNode(4)
-        val rl2 = TreeNode(3)
-        val rr2 = TreeNode(6)
+        val root = Node(5)
+        val l1 = Node(1)
+        val r1 = Node(4)
+        val rl2 = Node(3)
+        val rr2 = Node(6)
 
         root.left = l1
         root.right = r1
