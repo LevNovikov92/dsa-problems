@@ -7,10 +7,18 @@ class CombinationSumTest {
     @Test
     fun combinationSum() {
         CombinationSum().apply {
-            assertEquals(listOf(listOf(7)), combinationSum(intArrayOf(2,3,6,7), 7))
-            assertEquals(listOf(listOf(2,3,2), listOf(7)), combinationSum(intArrayOf(2,3,6,2,7), 7))
-            assertEquals(listOf(listOf(1,3,6), listOf(3,7), listOf(6,4)),
-                    combinationSum(intArrayOf(1,3,6,4,7), 10))
+            assertEquals(
+                    listOf(
+                            listOf(1, 7),
+                            listOf(1, 2, 5),
+                            listOf(2, 6),
+                            listOf(1, 1, 6)
+                    ),
+                    combinationSum(
+                            intArrayOf(10,1,2,7,6,1,5),
+                            8
+                    )
+            )
         }
     }
 }

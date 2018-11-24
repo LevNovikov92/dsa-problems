@@ -10,12 +10,12 @@ class CombinationSum {
         val list = mutableListOf<List<Int>>()
         for (i in fromIndex until candidates.size) {
             if (candidates[i] == target) {
-                list.add(mutableListOf<Int>().apply {
+                val newList: List<Int> = mutableListOf<Int>().apply {
                     addAll(initialList)
                     add(candidates[i])
-                })
+                }.sortedBy { it }
+                if (!list.contains(newList)) list.add(newList)
             } else if (candidates[i] < target && i < candidates.size - 1) {
-                list.addAll(
                         combinationSum(
                                 candidates,
                                 i + 1,
@@ -24,8 +24,11 @@ class CombinationSum {
                                     addAll(initialList)
                                     add(candidates[i])
                                 }
-                        )
-                )
+                        ).forEach {
+                            if (!list.contains(it)) {
+                                list.add(it)
+                            }
+                        }
             }
         }
         return list
